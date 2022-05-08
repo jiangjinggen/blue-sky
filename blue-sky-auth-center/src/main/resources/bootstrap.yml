@@ -1,0 +1,54 @@
+server:
+  port: 7000
+  servlet:
+    context-path: /blue-sky-auth-center
+
+spring:
+  application:
+    name: blue-sky-auth-center
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
+        # server-addr: 127.0.0.1:8848,127.0.0.1:8849,127.0.0.1:8850 # Nacos 服务器地址
+        namespace: c4233ccb-8741-46ad-9505-073af6542e0b
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+  datasource:
+    #type: com.alibaba.druid.pool.DruidDataSource
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blue_sky_db?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 连接池
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: BlueSkyHikariCP
+#mybatis plus配置
+mybatis-plus:
+  #mapper-locations: classpath:/resources/mapper/*Mapper.xml    # mapper映射文件
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      #table-prefix: t_
+      #配置mybatis plus 在更新时只更新非空和非NULL的字段
+      update-strategy: not_empty
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

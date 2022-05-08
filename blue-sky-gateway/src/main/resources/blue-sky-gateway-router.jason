@@ -1,0 +1,66 @@
+[
+  {
+    "id": "blue-sky-nacos-client",
+    "order": 0,
+    "predicates": [
+      {
+        "args": {
+          "pattern": "/sky/nacos-client/**"
+        },
+        "name": "Path"
+      }
+    ],
+    "uri": "lb://nacos-client",
+    "filters": [
+      {
+        "name": "HeaderToken"
+      },
+      {
+        "name": "StripPrefix",
+        "args": {
+          "parts": "1"
+        }
+      }
+    ]
+  },
+  {
+  "id": "blue-sky-account-service",
+  "predicates": [
+    {
+      "args": {
+        "pattern": "/sky/blue-sky-account-service/**"
+      },
+      "name": "Path"
+    }
+  ],
+  "uri": "lb://blue-sky-account-service",
+  "filters": [
+    {
+      "name": "StripPrefix",
+      "args": {
+        "parts": "1"
+      }
+    }
+  ]
+},
+  {
+    "id": "blue-sky-goods-service",
+    "predicates": [
+      {
+        "args": {
+          "pattern": "/sky/blue-sky-goods-service/**"
+        },
+        "name": "Path"
+      }
+    ],
+    "uri": "lb://blue-sky-goods-service",
+    "filters": [
+      {
+        "name": "StripPrefix",
+        "args": {
+          "parts": "1"
+        }
+      }
+    ]
+  }
+]
