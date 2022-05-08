@@ -31,8 +31,8 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 // 选择展示哪些接口
                 .select()
-                // 只有 com.imooc.ecommerce 包内的才去展示
-                .apis(RequestHandlerSelectors.basePackage("com.imooc.ecommerce"))
+                // 只有 com.iblue.esky 包内的才去展示
+                .apis(RequestHandlerSelectors.basePackage("com.iblue.esky"))
                 .paths(PathSelectors.any())
                 .build();
     }
