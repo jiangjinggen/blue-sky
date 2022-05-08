@@ -14,6 +14,13 @@
         <module>blue-sky-admin</module>
         <module>blue-sky-auth-center</module>
         <module>blue-sky-gateway</module>
+        <module>e-commerce-service</module>
+        <module>blue-sky-boss</module>
+        <module>blue-sky-log-center</module>
+        <module>blue-sky-job-center</module>
+        <module>blue-sky-sentinel-client</module>
+        <module>blue-sky-stream-client</module>
+        <module>blue-sky-hystrix-dashboard</module>
     </modules>
 
 
