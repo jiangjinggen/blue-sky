@@ -47,10 +47,10 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <!-- seata -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- 注册 Seata 数据源需要连接池 -->
         <!--<dependency>
             <groupId>com.zaxxer</groupId>

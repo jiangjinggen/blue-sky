@@ -1,9 +1,9 @@
 package com.iblue.esky.config;
 
-import com.alibaba.cloud.seata.web.SeataHandlerInterceptor;
-import com.iblue.esky.filter.LoginUserInfoInterceptor;
+//import com.alibaba.cloud.seata.web.SeataHandlerInterceptor;
+//import com.iblue.esky.filter.LoginUserInfoInterceptor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+//import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -16,7 +16,7 @@ public class SkyWebMvcConfig extends WebMvcConfigurationSupport {
     /**
      * <h2>添加拦截器配置</h2>
      * */
-    @Override
+    /*@Override
     protected void addInterceptors(InterceptorRegistry registry) {
 
         // 添加用户身份统一登录拦截的拦截器
@@ -25,7 +25,7 @@ public class SkyWebMvcConfig extends WebMvcConfigurationSupport {
         // Seata 传递 xid 事务 id 给其他的微服务
         // 只有这样, 其他的服务才会写 undo_log, 才能够实现回滚
         registry.addInterceptor(new SeataHandlerInterceptor()).addPathPatterns("/**");
-    }
+    }*/
 
     /**
      * <h2>让 MVC 加载 Swagger 的静态资源</h2>

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `blue_sky_db`.`t_ecommerce_address` (
   `province` varchar(64) NOT NULL DEFAULT '' COMMENT '省',
   `city` varchar(64) NOT NULL DEFAULT '' COMMENT '市',
   `address_detail` varchar(256) NOT NULL DEFAULT '' COMMENT '详细地址',
-  `create_time` datetime NOT NULL DEFAULT '0000-01-01 00:00:00' COMMENT '创建时间',
-  `update_time` datetime NOT NULL DEFAULT '0000-01-01 00:00:00' COMMENT '更新时间',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='用户地址表';
