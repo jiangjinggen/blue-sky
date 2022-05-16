@@ -24,6 +24,9 @@ spring:
     password: 123456
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+    xa:
+      properties:
+        userInformationSchema: true
     # 连接池
     hikari:
       maximum-pool-size: 8
