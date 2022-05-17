@@ -1,5 +1,7 @@
 package com.iblue.esky.ecommerce.goods.constant;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,8 +12,6 @@ import java.util.stream.Stream;
  * <h1>商品类别</h1>
  * 电器 -> 手机、电脑
  * */
-@Getter
-@AllArgsConstructor
 public enum GoodsCategory {
 
     DIAN_QI("10001", "电器"),
@@ -23,11 +23,25 @@ public enum GoodsCategory {
     ;
 
     /** 商品类别编码 */
+    @EnumValue
     private final String code;
 
     /** 商品类别描述信息 */
+    @JsonValue
     private final String description;
 
+    GoodsCategory(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getDescription() {
+        return description;
+    }
     /**
      * <h2>根据 code 获取到 GoodsCategory</h2>
      * */

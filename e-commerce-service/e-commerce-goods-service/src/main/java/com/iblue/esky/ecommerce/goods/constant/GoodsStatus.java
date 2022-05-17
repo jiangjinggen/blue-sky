@@ -1,5 +1,7 @@
 package com.iblue.esky.ecommerce.goods.constant;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -9,8 +11,7 @@ import java.util.stream.Stream;
 /**
  * <h1>商品状态枚举类</h1>
  * */
-@Getter
-@AllArgsConstructor
+
 public enum GoodsStatus {
 
     ONLINE(101, "上线"),
@@ -19,11 +20,25 @@ public enum GoodsStatus {
     ;
 
     /** 状态码 */
+    @EnumValue
     private final Integer status;
 
     /** 状态描述 */
+    @JsonValue
     private final String description;
 
+    GoodsStatus(Integer status, String description) {
+        this.status = status;
+        this.description = description;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public String getDescription() {
+        return description;
+    }
     /**
      * <h2>根据 code 获取到 GoodsStatus</h2>
      * */

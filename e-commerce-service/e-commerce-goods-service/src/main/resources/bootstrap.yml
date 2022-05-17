@@ -57,7 +57,18 @@ spring:
     # password:
     # 连接超时时间
     timeout: 10000
-
+#mybatis plus配置
+mybatis-plus:
+  type-enums-package: com.iblue.esky.ecommerce.goods.constant
+  #mapper-locations: classpath:/resources/mapper/*Mapper.xml    # mapper映射文件
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      #table-prefix: t_
+      #配置mybatis plus 在更新时只更新非空和非NULL的字段
+      update-strategy: not_empty
 # 暴露端点
 management:
   endpoints:
