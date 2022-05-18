@@ -50,7 +50,12 @@ public class GoodsServiceImpl extends ServiceImpl<EcommerceGoodsMapper, Ecommerc
             String goodsName
     )
     {
-        EcommerceGoods ecommerceGoods = new EcommerceGoods();
+        //构造查询条件
+        QueryWrapper<EcommerceGoods> query = new QueryWrapper<>();
+        query.lambda().eq(EcommerceGoods::getGoodsCategory, goodsCategory);
+        query.lambda().eq(EcommerceGoods::getBrandCategory, brandCategory);
+        query.lambda().eq(EcommerceGoods::getGoodsName, goodsName);
+        EcommerceGoods ecommerceGoods = this.baseMapper.selectOne(query);
         return  Optional.ofNullable(ecommerceGoods);
     }
     @Override
