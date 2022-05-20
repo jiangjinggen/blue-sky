@@ -16,6 +16,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,6 +31,16 @@ public class DBDocTest {
 
     @Autowired
     private ApplicationContext applicationContext;
+    @Test
+    public void tempTest(){
+        Integer iA = 200;
+        Integer iB = 200;
+        Boolean bol = (iA == iB);
+        System.out.println(bol);
+        BigDecimal dA = new BigDecimal(0.001);
+        BigDecimal dB = new BigDecimal("0.001");
+        System.out.println(dA.toString()+","+dB.toString());
+    }
     /**
      * 文档生成
      */
